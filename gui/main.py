@@ -2,14 +2,23 @@
 
 import sys  # Needed to use command line parameters
 
-from PySide2.QtWidgets import QApplication, QMainWindow
+from PySide2.QtWidgets import QVBoxLayout, QLabel, QApplication, QWidget
 
 
-class CryptoPortfolio(QMainWindow):
+class CryptoPortfolio(QWidget):
     """ main Crypto Portfolio window class """
     def __init__(self):
         super().__init__()  # call the parent constructor
-        self.show()  # display the BattleTask window
+        self.init_ui()
+        self.show()  # display the Crypto Portfolio window
+
+    def init_ui(self):
+        """ initialise the user interface """
+        _vertical_layout = QVBoxLayout()
+        _title_label = QLabel()
+        _title_label.setText("Crypto Portfolio")
+        _vertical_layout.addWidget(_title_label)
+        self.setLayout(_vertical_layout)
 
 
 def main():
