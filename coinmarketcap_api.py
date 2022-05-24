@@ -7,16 +7,6 @@ from requests import Session
 
 # CoinMarketCap documentation: https://coinmarketcap.com/api/documentation/v1
 
-# Version 1 live end point (deprecated):
-# https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest
-
-# Version 1 sandbox (test data) end point (deprecated)
-# https://sandbox-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest
-
-# Version 2 end point:
-# https://pro-api.coinmarketcap.com/v2/cryptocurrency/quotes/latest
-
-
 class CMC:
     """ Main CoinMarketCap class to access the API """
 
@@ -30,7 +20,6 @@ class CMC:
         }
         self.session = Session()
         self.session.headers.update(self.headers)
-
 
     def get_prices(self, symbols_csv_string, currency):
         """
